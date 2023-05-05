@@ -2,5 +2,5 @@
 <img src="./assets/architecture.png"></img>
 
 ### ToDo
-[ ] where to get the dataset ? (youtube maybe ?)
+[ ] where to get the dataset ? (youtube maybe ?)<br>
 [ ] process the dataset and create some kind of JSON file (refr - mail)
