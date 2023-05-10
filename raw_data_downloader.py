@@ -1,4 +1,5 @@
 ## cloning PYTUBE no more imports form PyPI !
+## clone and convert to the lowest bitrate possible 
 from pytube import YouTube
 
 # Ask the user for the YouTube video URL
@@ -8,7 +9,7 @@ url = "https://www.youtube.com/watch?v=DOWDNBu9DkU"
 yt = YouTube(url)
 
 # Get the highest resolution video stream
-stream = yt.streams.get_audio_only()
+stream = yt.streams(abr="64kbps").get_audio_only()
 
 # Download the video
 print("Downloading...")
