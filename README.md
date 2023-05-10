@@ -8,6 +8,7 @@
 ### Research (More like documenting my work flow)
 So this is just my initital thinking BUT can I find .vrts or .vtt files ? I don't think so !<br>
 What if I could create .vrts or .vtt (I prefer .vtt more its easy and fun) this could expand the operations ! <br>
+To do the same I tries using PYTUBE but it does not give me full control over the thing So I decided to clone it into the project and augment it somehow ! that would give me a better control over what I want <br>
 Now how do I create my own .vtt file ? Okay so how the .vtt file looks like - <br>
 1. it contains basic things such as the time and the dialogue spoken in that time frame !<br>
 <a href="./smpleDataset/">.vtt sampe file </a>
