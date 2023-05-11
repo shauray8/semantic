@@ -1,5 +1,5 @@
 ## cloning PYTUBE no more imports form PyPI !
-## clone and convert to the lowest bitrate possible 
+## clone and convert to the  owest bitrate possible 
 from pytube import YouTube
 
 # Ask the user for the YouTube video URL
