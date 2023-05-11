@@ -76,22 +76,6 @@ def filter(
 
         return StreamQuery._filter(filters).order_by("abr").first()
 
-urls = []
-
-with open("urls.txt", "r") as file:
-    urls.append(file.read().split("\n"))
-
-print(urls)
-
-st = YouTube('https://www.youtube.com/watch?v=qc07NNLUtVc')
-st.streams.filter(only_audio=True, subtype="mp4").order_by("abr").first().download()
-#StreamQuery(st.fmt_streams).get_audio_only()
-
-print(YouTube('https://www.youtube.com/watch?v=qc07NNLUtVc').author)
-print(YouTube('https://www.youtube.com/watch?v=qc07NNLUtVc').title)
-
-url = 'https://www.youtube.com/watch?v=qc07NNLUtVc'
-
 def regex_search(pattern: str, string: str, group: int) -> str:
     regex = re.compile(pattern)
     results = regex.search(string)
@@ -99,5 +83,22 @@ def regex_search(pattern: str, string: str, group: int) -> str:
         assert ("No such valid URL exits")
     return results.group(group)
 
-print(regex_search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", url, group=1))
 
+## define a function which will get imported from some other file 
+def callaback():
+    pass
+
+if __name__ == "__main__":
+    urls = []
+    with open("urls.txt", "r") as file:
+        urls.append(file.read().split("\n"))
+    print(urls)
+
+    for rl in urls[0][:-1]:
+        st = YouTube(rl)
+        watch_url = regex_search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", rl, group=1)
+        audio_file = st.streams.filter(only_audio=True, subtype="mp4").order_by("abr").first().download(filename = "../Data/"+ watch_url+".mp4")
+        print(audio_file)
+        author = st.author
+        title = st.title
+#StreamQuery(st.fmt_streams).get_audio_only()
